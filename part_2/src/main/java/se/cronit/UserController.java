@@ -8,12 +8,12 @@ import org.jasypt.util.password.BasicPasswordEncryptor;
 public class UserController {
 	
 	private BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
-	private static Map<String, User> userDB = new HashMap<String, User>();
+	private static UserDB userDB = new UserDB();
 	
 	
 	public void signup(String email, String password){ 
 		String encryptedPassword = passwordEncryptor.encryptPassword(email);
-		userDB.put(email, encryptedPassword);
+		userDB.add(email, encryptedPassword);
 	
 	}
 

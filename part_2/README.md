@@ -1,2 +1,2 @@
 === PART 2
-external api
+In this part we going to extend our rest server with login support. 

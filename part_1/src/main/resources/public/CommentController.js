@@ -1,20 +1,23 @@
 var app = angular.module('app', ['ngResource']) 
 
- 
+
+
+
 app.controller('CommentController', function($scope, $http) {
     
 	$http.get("api/comment/").then(function(response){
 		$scope.comments = response.data;
 	});
 	
-    $scope.add = function(c) {
-    	$http.post("api/comment/", c).then(function(response){
-    		$scope.comments.push(c);
+    $scope.add = function() {
+    	$http.post("api/comment/", $scope.comment).then(function(response){
+    		$scope.comments.push($scope.comment); 
+    		
     	}, function(){
     		alert("Error")
     	})
     };
-
+ 
     
     
  });
