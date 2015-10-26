@@ -18,8 +18,8 @@ public class UserController {
 	}
 
 	public void login(String email, String inputPassword){
-		String encryptedPassword = userDB.get(email);
-		if (passwordEncryptor.checkPassword(inputPassword, encryptedPassword)) { 
+		User u = userDB.get(email);
+		if (passwordEncryptor.checkPassword(inputPassword, u.getPassword())) { 
 			
 		} else { 
 			
