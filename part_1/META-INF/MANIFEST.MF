@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: part_1
+Bundle-SymbolicName: part_1
+Bundle-Version: 1.0.0.qualifier
+Export-Package: se.cronit

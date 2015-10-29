@@ -1,8 +1,5 @@
 var app = angular.module('app', []) 
-
-
-
-
+ 
 app.controller('CommentController', function($scope, $http) {
     
 	$http.get("api/comment/").then(function(response){
@@ -17,8 +14,6 @@ app.controller('CommentController', function($scope, $http) {
     		alert("Error")
     	})
     };
- 
-    
-    
+  
  });
-
+ 
