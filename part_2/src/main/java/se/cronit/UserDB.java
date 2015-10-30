@@ -7,12 +7,12 @@ public class UserDB {
 
 	private static Map<String, User> users = new HashMap<String, User>();
 	
-	public void add(String email, String encryptedPassword) {
-		users.put(email, new User(email, encryptedPassword));
+	public static void add(String name, String encryptedPassword) {
+		users.put(name, new User(name, encryptedPassword));
 	}
 
-	public User get(String email) {
-		return users.get(email);
+	public static User get(String name) {
+		return users.get(name);
 		 
 	}
 

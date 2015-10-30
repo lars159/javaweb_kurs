@@ -1,21 +1,36 @@
 angular.module('app', []) .controller('CommentCtrl', function($scope, $http) {
     
 	
-	$http.get("http://api.sr.se/api/v2/traffic/messages?format=json").then(function(response) {
-		$scope.traffic = response.data;
-	})
-	
-	$scope.comments = $http.get("/user/" +$scope.user.id +"/comment/")
+ 
 	
     $scope.add = function(c) {
-		$http.post("/user/" +$scope.user.id +"/comment/").then(function(response){
+		$http.post("/comment/add").then(function(response){
 			$scope.comments.push(c);
+		},function(){
+			alert("error from server")
+		})
+    };
+
+    
+    $scope.signup = function(c) {
+		$http.get("/user/signup/" + $scope.name + "?password=" + $scope.password).then(function(response){
+			$scope.user = response.data;
 		},function(){
 			alert("error from server")
 		})
 		
     };
-
     
-  });
+    $scope.login = function(c) {
+		$http.get("/user/login/" + $scope.name + "?password=" + $scope.password).then(function(response){
+			$scope.user = response.data;
+			$scope.isLoggedIn = true;
+		},function(){
+			alert("error from server")
+		})
+		
+    };
+    
+    
+ });
 
