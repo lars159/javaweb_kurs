@@ -20,7 +20,7 @@
 	<div ng-show="isLoggedIn">
 		Kommentarer
 		<ul>
-			<li ng-repeate="c in comments">{{c.text}}</li>
+			<li ng-repeat="c in user.comments">{{c}}</li>
 			
 		</ul>
 		<input ng-model="comment"   class="form-controll">

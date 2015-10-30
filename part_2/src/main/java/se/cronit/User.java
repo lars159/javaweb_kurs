@@ -1,5 +1,6 @@
 package se.cronit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -12,7 +13,7 @@ public class User {
 	
 	private String name;
 	private String password;
-	private List<String> Comments;
+	private List<String> comments = new ArrayList<String>();
 	
  
 
@@ -25,11 +26,11 @@ public class User {
 	}
 
 	public List<String> getComments() {
-		return Comments;
+		return comments;
 	}
 
 	public void setComments(List<String> comments) {
-		Comments = comments;
+		comments = comments;
 	}
 
 	public String getName() {

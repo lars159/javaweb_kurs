@@ -4,8 +4,8 @@ angular.module('app', []) .controller('CommentCtrl', function($scope, $http) {
  
 	
     $scope.add = function(c) {
-		$http.post("/comment/add").then(function(response){
-			$scope.comments.push(c);
+		$http.post("/comment/add", {comment : c}).then(function(response){
+			$scope.user.comments.push(c);
 		},function(){
 			alert("error from server")
 		})
