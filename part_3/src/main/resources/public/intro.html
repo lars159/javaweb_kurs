@@ -5,19 +5,21 @@
  <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
 
 </head>
-<body  ng-controller="Ctrl">
-<!--REMOVE-->>
-
- <div ng-hide="isLoggedIn">
- <input ng-model="name" class="form-controll">
- <input ng-model="password" type="password"i class="form-controll">
- <button class="btn btn-info" ng-click="login()">Login</Button>
-
- </div>
+<body  ng-controller="Ctrl" class="content">
  
- <div ng-show="isLoggedIn">
- Your are now logged in
- </div>
+	<div ng-repeat="t in traffic">
+		{{t.title}}
+		<ul>
+			<li ng-repeat="c in t.comments  | {id : t.id}">
+				{{c}}
+			
+			</li>
+		</ul>
+		<input ng-model="t.c">
+		<button class="btn btn-info" ng-click="add(t)">Add</button>
+	</div>
+
+ 
 
 </body>
 </html>
