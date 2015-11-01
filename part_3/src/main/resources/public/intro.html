@@ -10,7 +10,7 @@
 	<div ng-repeat="t in traffic">
 		{{t.title}}
 		<ul>
-			<li ng-repeat="c in t.comments  | {id : t.id}">
+			<li ng-repeat="c in t.comments">
 				{{c}}
 			
 			</li>
