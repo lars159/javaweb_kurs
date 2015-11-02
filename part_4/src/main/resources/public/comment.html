@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+
+	<body ng-controller="CommentController">
+		
+		<form ng-submit="add()">
+			<input type="text" ng-model="comment"> 	
+			<input type="text" ng-model="name"> 		
+			<button type="submit">Comment</button>
+		</form>
+		
+		
+		<ul>
+			<li ng-repeat="c in comments track by $index"> {{c.text}} {{c.date | date}} {{c.name}}</li>
+		</ul>	
+	
+	</body>
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> 
+	 <script src="CommentController.js"></script>
+</html>

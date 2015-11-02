@@ -1,4 +1,4 @@
-package se.cronit;
+package se.cronit.controller;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,8 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+
+import se.cronit.db.UserDB;
 
 @RestController
 @RequestMapping("/comment")

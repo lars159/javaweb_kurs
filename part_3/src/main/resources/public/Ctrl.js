@@ -8,8 +8,7 @@ app.controller('Ctrl', function($scope, $http){
 	$scope.add = function(t){
 		if (t.comments) {
 			t.comments = [];
-		}
-		
+		} 
 		$scope.t.comments.push(t.c);
 	}
 

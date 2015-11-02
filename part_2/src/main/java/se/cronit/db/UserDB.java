@@ -1,4 +1,4 @@
-package se.cronit;
+package se.cronit.db;
 
 import java.util.HashMap;
 import java.util.Map;

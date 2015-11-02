@@ -1,4 +1,4 @@
-package se.cronit;
+package se.cronit.controller;
 import java.util.ArrayList;
 import java.util.List;
 
