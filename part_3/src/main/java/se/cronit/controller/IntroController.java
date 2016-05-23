@@ -16,8 +16,32 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/intro")
 public class IntroController {
 
- 
- 
+	//REMOVE
+	
+	public static Map<String, String> db = new HashMap<String, String>();
+	
+	
+	@RequestMapping("login/{name}")
+    public @ResponseBody boolean login(HttpServletResponse response, HttpSession session, @PathVariable String name, @RequestParam String password) {
+        if(db.containsKey(name) && db.get(name).equals(password)) {
+        	session.setAttribute("name", name);
+        	return true;
+        }
+        response.setStatus(403);
+        return false;
+    }
+
+	@RequestMapping(value="signup/{name}", method=RequestMethod.POST)
+    public @ResponseBody boolean signup(@PathVariable String name, @RequestParam String password, HttpServletResponse response) {
+		if(!db.containsKey(name)) {
+			db.put(name, password);
+			return true;
+		} else {
+			response.setStatus(403);
+			return false;
+		}
+    }
+
     
      
 }

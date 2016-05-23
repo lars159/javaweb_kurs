@@ -1,20 +1,24 @@
-<!doctype html>
 <html ng-app="app">
 
-	<body ng-controller="CommentController">
+	<body ng-controller="CommentContoller">
 		
-		<form ng-submit="add()">
-			<input type="text" ng-model="comment"> 	
-			<input type="text" ng-model="name"> 		
-			<button type="submit">Comment</button>
-		</form>
+ 
 		
+		<div ng-repeat="t in traffic">
+			<h2>{{t.subcategory}} {{t.title}} </h2>
+			<ul>
+				<li ng-repeat="c in comments | {id : t.id}"> {{c}} </li>
+			</ul>	
+			<form ng-submit="add(c)">
+				<input type="email" ng-model="c">	
+				<input type="text" ng-model="c">		
+				<button type="submit">Save</button>
+			</form>
+		</div>
 		
-		<ul>
-			<li ng-repeat="c in comments track by $index"> {{c.text}} {{c.date | date}} {{c.name}}</li>
-		</ul>	
+ 
 	
 	</body>
- 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> 
-	 <script src="CommentController.js"></script>
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+	 <script src="comment.js"></script>
 </html>

@@ -1,25 +1,17 @@
-<html ng-app="app">
-<head>
- <script src="angular.js"></script>
- <script src="Ctrl.js"></script>
- <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
-
-</head>
-<body  ng-controller="Ctrl">
-<!--REMOVE-->
-
- <div ng-hide="isLoggedIn">
-	 <input ng-model="name" class="form-controll">
-	 <input ng-model="password" type="password"  class="form-controll">
-	 <button class="btn btn-info" ng-click="login()">Login</Button>
- </div>
- 
- <div ng-show="isLoggedIn">
-  <ul>
-  	<li ng-repeate="c in comments"> {{c.text}} </li>
-  </ul>
- </div>
-
-</body>
-</html>
+  <!doctype html>
+  <html ng-app="app">
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="test.js" type="text/javascript" ></script>
+    </head>
+    <body ng-controller="ctrl">
+      <div>
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <button ng-click="click()">Click me</button>
+        <hr>
+        <h1>Hello {{yourName}}!</h1>
+      </div>
+    </body>
+  </html>
 

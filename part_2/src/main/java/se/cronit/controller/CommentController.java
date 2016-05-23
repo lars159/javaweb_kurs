@@ -2,24 +2,32 @@ package se.cronit.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-import se.cronit.db.UserDB;
-
 @RestController
-@RequestMapping("/comment")
+@RequestMapping("api/comment")
 public class CommentController {
-    
-	@RequestMapping(value="/add", method=RequestMethod.POST)
-    public void add(HttpServletRequest req, @RequestBody String comment) {
-		String name = (String) req.getSession().getAttribute("user");
-		if(name != null) {
-			UserDB.get(name).getComments().add(comment);
-		} 
+
+	public static List<String> list = new ArrayList<String>();
+	
+	
+	@RequestMapping
+    public @ResponseBody List<String> getAll() {
+        return list;
     }
+
+	@RequestMapping(value = "/{id}")
+    public @ResponseBody String get(@PathVariable int id) {
+        return list.get(id);
+    }
+    
+	@RequestMapping(value="/", method=RequestMethod.POST)
+    public void add(@RequestBody String comment) {
+        list.add(comment);
+    }
+    
+     
 }

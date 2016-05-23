@@ -1,32 +1,20 @@
+<!doctype html>
 <html ng-app="app">
-<head>
-<script src="angular.js"></script>
-<script src="CommentCtrl.js"></script>
-<link href="bootstrap.css" rel="stylesheet" type="text/css">
 
-</head>
-<body ng-controller="CommentCtrl">
-	<!--REMOVE-->
-	 
-
-	<div ng-hide="isLoggedIn">
-		<input ng-model="name" class="form-controll"> 
-		<input ng-model="password" type="password" class="form-controll">
-		<button class="btn btn-info" ng-click="login()">Login</Button>
-		<button class="btn btn-warning" ng-click="signup()">Signup</Button>
-
-	</div>
-
-	<div ng-show="isLoggedIn">
-		Kommentarer
+	<body ng-controller="CommentController">
+		
+		<form ng-submit="add()">
+			<input type="text" ng-model="comment"> 	
+			<input type="text" ng-model="name"> 		
+			<button type="submit">Comment</button>
+		</form>
+		
+		
 		<ul>
-			<li ng-repeat="c in user.comments">{{c}}</li>
-			
-		</ul>
-		<input ng-model="comment"   class="form-controll">
-		<button class="btn btn-info" ng-click="add()">Add</Button>
-	</div>
-
-</body>
+			<li ng-repeat="c in comments track by $index"> {{c.text}} {{c.date | date}} {{c.name}}</li>
+		</ul>	
+	
+	</body>
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> 
+	 <script src="CommentController.js"></script>
 </html>
-

@@ -1,17 +1,26 @@
-  <!doctype html>
-  <html ng-app="app">
-    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-      <script src="test.js" type="text/javascript" ></script>
-    </head>
-    <body ng-controller="ctrl">
-      <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <button ng-click="click()">Click me</button>
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-      </div>
-    </body>
-  </html>
+<html ng-app="app">
+<head>
+ <script src="angular.js"></script>
+ <script src="Ctrl.js"></script>
+ <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
+
+</head>
+<body  ng-controller="Ctrl" class="content">
+ 
+	<div ng-repeat="t in traffic">
+		{{t.title}}
+		<ul>
+			<li ng-repeat="c in t.comments">
+				{{c}}
+			
+			</li>
+		</ul>
+		<input ng-model="t.c">
+		<button class="btn btn-info" ng-click="add(t)">Add</button>
+	</div>
+
+ 
+
+</body>
+</html>
 
