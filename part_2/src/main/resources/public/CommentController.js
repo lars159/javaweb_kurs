@@ -12,7 +12,7 @@ app.controller('CommentController', function($scope, $http) {
     		
     	}, function(){
     		alert("Error")
-    	})
+    	});
     };
   
  });

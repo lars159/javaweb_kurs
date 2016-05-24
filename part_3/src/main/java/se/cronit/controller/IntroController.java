@@ -21,27 +21,14 @@ public class IntroController {
 	public static Map<String, String> db = new HashMap<String, String>();
 	
 	
-	@RequestMapping("login/{name}")
-    public @ResponseBody boolean login(HttpServletResponse response, HttpSession session, @PathVariable String name, @RequestParam String password) {
-        if(db.containsKey(name) && db.get(name).equals(password)) {
+	@RequestMapping("login")
+    public login(HttpSession session, String name, String password) {
+        if(name.equals("admin) && password.equals("admin")) {
         	session.setAttribute("name", name);
         	return true;
         }
         response.setStatus(403);
         return false;
     }
-
-	@RequestMapping(value="signup/{name}", method=RequestMethod.POST)
-    public @ResponseBody boolean signup(@PathVariable String name, @RequestParam String password, HttpServletResponse response) {
-		if(!db.containsKey(name)) {
-			db.put(name, password);
-			return true;
-		} else {
-			response.setStatus(403);
-			return false;
-		}
-    }
-
-    
      
 }

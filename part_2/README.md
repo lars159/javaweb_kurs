@@ -1,4 +1,4 @@
-## PART 1
+## PART 2 
 This part is to give you a intro to Spring and Angular how to setup a simpel rest based web server and how to make Angular use it.
 
 
@@ -11,5 +11,6 @@ This part is to give you a intro to Spring and Angular how to setup a simpel res
 
 3. Test debbuging your application by pressing F12
 
+4. (Optional) add a date stamp to each comment from server side.
 
 

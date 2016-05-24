@@ -1,7 +1,5 @@
-=== Part 4
-Last part
+=== Part 5 
+Last part websockets batch job
 
-
-1. external javasscript 
-2. Deploy profiling
+1.  
 

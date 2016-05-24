@@ -8,6 +8,4 @@ app.controller('Ctrl', function($scope){
 	$scope.isLoggedIn = true;
     }
 
-
-
 });

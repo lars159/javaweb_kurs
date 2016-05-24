@@ -1,7 +1,8 @@
 <html ng-app="app">
 <head>
- <script src="angular.js"></script>
- <script src="Ctrl.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+ 
+ <script src="js/Ctrl.js"></script>
  <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
 
 </head>
@@ -15,9 +16,10 @@
  </div>
  
  <div ng-show="isLoggedIn">
-  <ul>
-  	<li ng-repeate="c in comments"> {{c.text}} </li>
-  </ul>
+  <h1>
+  You are now logged in
+  
+  </h1>
  </div>
 
 </body>
