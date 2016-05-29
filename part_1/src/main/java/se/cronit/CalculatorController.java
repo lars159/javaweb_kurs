@@ -8,12 +8,13 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController 
+@RequestMapping("/")
 public class CalculatorController {
 	 
 	@Autowired
 	CalculatorService cService; 
 	
-	@RequestMapping("/")
+	@RequestMapping("/add")
     public int add(Integer a, Integer b) {
         return cService.add(a,b);
     }

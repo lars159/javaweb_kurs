@@ -1,9 +1,9 @@
 <html ng-app="app">
 <head>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
- 
+     <script src="https://code.angularjs.org/1.5.5/angular.js"></script>
+
  <script src="js/Ctrl.js"></script>
- <link href="bootstrap.css" rel="stylesheet" type="text/css"> 
+ <link href="bootstrap.css" rel="stylesheet" type="text/css">
 
 </head>
 <body  ng-controller="Ctrl">
@@ -14,14 +14,13 @@
 	 <input ng-model="password" type="password"  class="form-controll">
 	 <button class="btn btn-info" ng-click="login()">Login</Button>
  </div>
- 
+
  <div ng-show="isLoggedIn">
   <h1>
   You are now logged in
-  
+
   </h1>
  </div>
 
 </body>
 </html>
-
