@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestSpringController {
+public class IntroController {
 
-	@RequestMapping("/status")
-	public String status(@RequestParam String test){
-		return test;
+	public String text ="";
+	@RequestMapping("/add")
+	public String add(String t){
+		text += t;
+		return text;
 	}
 	
 	@RequestMapping(value="/status", method=RequestMethod.POST)
