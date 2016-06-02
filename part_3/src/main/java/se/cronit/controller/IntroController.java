@@ -16,19 +16,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/intro")
 public class IntroController {
 
-	//REMOVE
-	
-	public static Map<String, String> db = new HashMap<String, String>();
-	
-	
-	@RequestMapping("login")
-    public login(HttpSession session, String name, String password) {
-        if(name.equals("admin) && password.equals("admin")) {
-        	session.setAttribute("name", name);
-        	return true;
-        }
-        response.setStatus(403);
-        return false;
-    }
+ 
      
 }

@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-import se.cronit.db.UserDB;
 
 @RestController
 @RequestMapping("/comment")
@@ -17,9 +16,6 @@ public class CommentController {
     
 	@RequestMapping(value="/add", method=RequestMethod.POST)
     public void add(HttpServletRequest req, @RequestBody String comment) {
-		String name = (String) req.getSession().getAttribute("user");
-		if(name != null) {
-			UserDB.get(name).getComments().add(comment);
-		} 
+ 
     }
 }
