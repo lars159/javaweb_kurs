@@ -15,26 +15,11 @@ import se.cronit.db.UserDB;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	
-	private BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
-	private static UserDB userDB = new UserDB();
-	
-	@RequestMapping("/signup/{name}")
-	public void signup(HttpServletResponse response, @PathVariable String name, @RequestParam String password){ 
-		String encryptedPassword = passwordEncryptor.encryptPassword(name);
-		userDB.add(name, encryptedPassword);
-	
-	}
+ 
 
 	@RequestMapping("/login/{name}")
 	public User login(HttpServletResponse response, @PathVariable String name, @RequestParam String password){
-		User u = userDB.get(name);
-		if (passwordEncryptor.checkPassword(password, u.getPassword())) { 
-			return u;
-		} else { 
-			response.setStatus(401);
-			return null;
-		} 
+ 
 	}
  
 }
