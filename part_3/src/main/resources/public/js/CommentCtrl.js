@@ -18,12 +18,15 @@ angular.module('app', []) .controller('CommentCtrl', function($scope, $http) {
     };
     
     $scope.login = function(c) {
-			$http.post("/login/", {username : "admin", password : "admin"}).then(function(response){
-				$scope.user = response.data;
-				$scope.isLoggedIn = true;
-			},function(){
-				alert("error from server")
-			}); 
+		
+		$http.post('login', {
+					headers : {
+					authorization : "Basic "
+							+ btoa("admin"+ ":"
+									+ "admin")
+				}
+				})
+			 $http.get('comment' )
     };
     
     

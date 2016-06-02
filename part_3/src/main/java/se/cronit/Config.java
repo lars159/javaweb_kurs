@@ -13,10 +13,8 @@ public class Config extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests()
-        .antMatchers("/**").hasRole("USER")
-        .and()
-        .formLogin();
+        http.httpBasic().and().authorizeRequests()
+        .antMatchers("/comment").hasRole("USER");
     }
 
     @Autowired
