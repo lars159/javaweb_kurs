@@ -11,6 +11,8 @@ This part is to give you a intro to Spring and Angular how to setup a simpel res
 
 3. Test debbuging your application by pressing F12
 
-4. (Optional) add a date stamp to each comment from server side.
+4. Edit the CommentController.java so that it returns a array of comments and use  the angular directive use ng-repeat="c in comments"
+
+5. (Optional) add a date stamp to each comment from server side.
 
 

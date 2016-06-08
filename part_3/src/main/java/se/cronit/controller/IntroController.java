@@ -1,21 +1,21 @@
 package se.cronit.controller;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/intro")
 public class IntroController {
 
+	@RequestMapping("/test1")
+	public String test1(){
+		return "test";
+	}
+	@RequestMapping("/test2") 
+	public String test2(){
+		return "test2";
+	}
+ 
  
      
 }

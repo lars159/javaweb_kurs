@@ -14,7 +14,7 @@ public class CommentController {
 	public static List<String> list = new ArrayList<String>();
 	
 	
-	@RequestMapping
+	@RequestMapping(method=RequestMethod.GET)
     public @ResponseBody List<String> getAll() {
         return list;
     }
@@ -24,7 +24,7 @@ public class CommentController {
         return list.get(id);
     }
     
-	@RequestMapping(value="/", method=RequestMethod.POST)
+	@RequestMapping(method=RequestMethod.POST)
     public void add(@RequestBody String comment) {
         list.add(comment);
     }

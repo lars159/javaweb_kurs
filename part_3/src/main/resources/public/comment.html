@@ -2,29 +2,20 @@
 <head>
 <script src="https://code.angularjs.org/1.5.5/angular.js"></script>
 
-<script src="js/CommentCtrl.js"></script>
-
+<script src="js/CommentController.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>part 3</title>
 </head>
-<body ng-controller="CommentCtrl">
-	<!--REMOVE-->
-  
-	<div ng-hide="isLoggedIn">
-		<input ng-model="name" class="form-controll"> 
-		<input ng-model="password" type="password" class="form-controll">
-		<button class="btn btn-info" ng-click="login()">Login</Button>
-		<button class="btn btn-warning" ng-click="signup()">Signup</Button>
-
-	</div>
-
-	<div ng-show="isLoggedIn">
-		Kommentarer
+<body ng-controller="CommentCtrl" class="container">
+ 
+		Comments
 		<ul>
-			<li ng-repeat="c in user.comments">{{c}}</li>
+			<li ng-repeat="c in comments">{{c}}</li>
 			
 		</ul>
+		
 		<input ng-model="comment"   class="form-controll">
 		<button class="btn btn-info" ng-click="add()">Add</Button>
-	</div>
 
 </body>
 </html>

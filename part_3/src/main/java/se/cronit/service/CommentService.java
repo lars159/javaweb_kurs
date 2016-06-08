@@ -1,15 +1,16 @@
 package se.cronit.service;
 
 
-import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 
 @Service 
 public class CommentService {
 	 
-	List<String> comments = new ArrayList<String>();
+	private List<String> comments = new ArrayList<String>();
     
     public void add(String c) {
         comments.add(c);

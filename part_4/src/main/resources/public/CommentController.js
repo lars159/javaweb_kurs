@@ -3,6 +3,7 @@ var app = angular.module('app', []);
   
 app.controller('CommentController', function($scope , $http) {
       
+	
     $scope.add = function(c) {
 		  $scope.comments.$save(c);
     }
@@ -12,6 +13,8 @@ app.controller('CommentController', function($scope , $http) {
     		$scope.traffic = response.data;
     	});
     }
-        
+       
+    $scope.getTraffic();
+	
 });
 
