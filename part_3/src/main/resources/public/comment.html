@@ -8,6 +8,10 @@
 </head>
 <body ng-controller="CommentCtrl" class="container">
  
+ <div ng-hide="isLogin">
+ 	<a href="login.html">Login</a>
+ </div>
+<div ng-show="isLogin">
 		Comments
 		<ul>
 			<li ng-repeat="c in comments">{{c}}</li>
@@ -16,7 +20,7 @@
 		
 		<input ng-model="comment"   class="form-controll">
 		<button class="btn btn-info" ng-click="add()">Add</Button>
-
+</div> 
 </body>
 </html>
 

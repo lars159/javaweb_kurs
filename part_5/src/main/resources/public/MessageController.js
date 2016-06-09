@@ -1,25 +1,24 @@
-var app = angular.module('app', ['ngStomp']) 
+var app = angular.module('app', []) 
  
-app.controller('MessageController', function($scope, $stomp) {
+app.controller('MessageController', function($scope) {
     
      $scope.messages = []; 
       var stompClient = null;
 
+      $scope.messages = [];
 
-
-    var socket = new SockJS('/socketjs');
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function(frame) {
-        setConnected(true);
-        console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function(greeting){
-            alert("asd")
-            $scope.messages.push(message.body);
-        });
-    });
- 
-     
- 
+      var socket = new SockJS('/chatWS');
+      stompClient = Stomp.over(socket); 
+      stompClient.connect({}, (frame) => {
+          console.log('Connected: ' + frame);
+          stompClient.subscribe('/topic/messages', function (msg){
+        	  console.log(msg);
+        	  $scope.$apply(function () {
+        		  $scope.messages.push(msg.body);
+        	  });
+        	  
+          });
+      });
   
  });
  

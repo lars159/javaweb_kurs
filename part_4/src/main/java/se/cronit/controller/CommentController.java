@@ -22,7 +22,7 @@ public class CommentController {
     
     @RequestMapping( method=RequestMethod.PUT)
     public void update(Comment c) {
-        list.add(c);
+        //Put updated comment in the list
     }
     
     @RequestMapping(value="/{id}", method=RequestMethod.GET)

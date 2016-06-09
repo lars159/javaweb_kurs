@@ -14,9 +14,9 @@ app.controller('IntroController', function($scope, $timeout, $http) {
 		console.log("3 sec delay");
 	}, 3000);
 
-	$http.get("/api/date", function(response){
-		console.log(response.data);
-		$scope.result = response.data;
+	$http.get("/api/user", function(response){
+		console.log(response);
+		$scope.result = response;
 	})
 	
 	$scope.array = ["1", "2"];

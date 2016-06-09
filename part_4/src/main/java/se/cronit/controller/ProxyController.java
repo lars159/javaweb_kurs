@@ -18,7 +18,7 @@ public class ProxyController {
     
 	@RequestMapping(value="/traffic", method=RequestMethod.GET)
     public SR traffic(HttpServletRequest req ) {
-		//REMOVE
+	 
 		RestTemplate restTemplate = new RestTemplate();
         SR quote = restTemplate.getForObject("http://api.sr.se/api/v2/traffic/messages?format=json", SR.class);
         return quote;

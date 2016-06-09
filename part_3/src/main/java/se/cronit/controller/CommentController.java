@@ -20,6 +20,7 @@ public class CommentController {
 
 
 	@RequestMapping(method=RequestMethod.POST) 
+	@Secured("ROLE_USER")
     public void add(@RequestBody String comment) {
         commentService.add(comment);
     }

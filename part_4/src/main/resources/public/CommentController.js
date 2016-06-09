@@ -1,7 +1,7 @@
-var app = angular.module('app', ['ngResource']);
+var app = angular.module('app');
 
   
-app.controller('CommentController', function($scope , $http, $resource) {
+app.controller('CommentController', function($scope , $http) {
       
 	var commentResource = $resource('/api/comment/:commentId', {commentId:'@id'});
     
@@ -17,7 +17,7 @@ app.controller('CommentController', function($scope , $http, $resource) {
     
   
     $http.get("http://api.sr.se/api/v2/traffic/messages?format=json").then(function(response) {
-        $scope.traffic = response.data;
+        $scope.traffic = response.data.messages;
     });
  
 	
