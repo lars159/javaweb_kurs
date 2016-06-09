@@ -16,14 +16,14 @@ public class CalculatorController {
 	
 	@RequestMapping("/add")
     public int add(Integer a, Integer b) {
-        return cService.add(a,b);
+      
     }
 	
 	
 	@ExceptionHandler(NullPointerException.class)
 	public String exceptionHandler(NullPointerException e, HttpServletResponse res) {
-		res.setStatus(404);
-		return "Bad input";
+		 
+		return "";
 	} 
 
 }

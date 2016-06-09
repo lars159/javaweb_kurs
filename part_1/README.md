@@ -10,7 +10,7 @@ This part is to give you a intro to Spring boot and to show how easy it's to set
 
 3. Test your application with POST man.
 
-4. Add operations for Subtraction and multiplication.
+4. Add operations for Subtraction, multiplication and Divison.
 
 5. Start a command shell and navigate to c:\workspace\java_web_kurs\part_1 then excute command "mvn package" go to cd target and run java -jar part_1-0.0.1-SNAPSHOT.jar  
 
