@@ -2,17 +2,24 @@ var app = angular.module('app', ['ngStomp'])
  
 app.controller('MessageController', function($scope, $stomp) {
     
-  $scope.messages = [];
-    $scope.client = ngstomp('http://localhost:15674/stomp');
-    $scope.client.connect("guest", "guest", 
-    		function() {
-		        $scope.client.subscribe("/topic/test", function(message) {
-		            $scope.messages.push(message.body);
-		        });
-    }
-    , function(){
-    	
-    }, '/');
+     $scope.messages = []; 
+      var stompClient = null;
+
+
+
+    var socket = new SockJS('/socketjs');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function(frame) {
+        setConnected(true);
+        console.log('Connected: ' + frame);
+        stompClient.subscribe('/topic/greetings', function(greeting){
+            alert("asd")
+            $scope.messages.push(message.body);
+        });
+    });
+ 
+     
+ 
   
  });
  

@@ -7,14 +7,31 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*; 
 
 @RestController
-@RequestMapping("/comment")
+@RequestMapping("api/comment")
 public class CommentController {
     
-	@RequestMapping(value="/add", method=RequestMethod.POST)
-    public void add(HttpServletRequest req, @RequestBody String comment) {
- 
+    List<Comment> list = new ArrayList<Comment>();
+    
+	@RequestMapping(  method=RequestMethod.POST)
+    public void add(Comment c) {
+        list.add(c);
+    }
+    
+    @RequestMapping( method=RequestMethod.PUT)
+    public void update(Comment c) {
+        list.add(c);
+    }
+    
+    @RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public Comment get(@PathVariable int id) {
+        return list.get(id);
+    }
+    
+    @RequestMapping(  method=RequestMethod.GET)
+    public List<Comment> getAll() {
+        return list;
     }
 }

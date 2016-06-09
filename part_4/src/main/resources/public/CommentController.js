@@ -1,20 +1,25 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngResource']);
 
   
-app.controller('CommentController', function($scope , $http) {
+app.controller('CommentController', function($scope , $http, $resource) {
       
-	
-    $scope.add = function(c) {
-		  $scope.comments.push(c);
+	var commentResource = $resource('/api/comment/:commentId', {commentId:'@id'});
+    
+    $scope.comments = commentResource.query();
+    
+    $scope.save = function (){
+        commentResource.save({name : $scope.text})
     }
-
-    $scope.getTraffic = function() {
-    	$http.get("http://api.sr.se/api/v2/traffic/messages?format=json").then(function(response) {
-    		$scope.traffic = response.data;
-    	});
+    
+    $scope.update = function (){
+        user.$save();
     }
-       
-    $scope.getTraffic();
+    
+  
+    $http.get("http://api.sr.se/api/v2/traffic/messages?format=json").then(function(response) {
+        $scope.traffic = response.data;
+    });
+ 
 	
 });
 
