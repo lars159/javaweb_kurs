@@ -13,14 +13,16 @@ public class Config extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests().anyRequest().authenticated()
-        .and().formLogin();
+        http.formLogin();
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+      /* Uncoment and add your own user.
         auth
             .inMemoryAuthentication()
                 .withUser("admin").password("admin").roles("USER");
+                */
+                
     }
 }

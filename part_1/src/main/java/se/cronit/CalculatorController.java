@@ -22,8 +22,8 @@ public class CalculatorController {
 	
 	@ExceptionHandler(NullPointerException.class)
 	public String exceptionHandler(NullPointerException e, HttpServletResponse res) {
-		 
-		return "";
+           //Add code to handel exception		 
+		
 	} 
 
 }

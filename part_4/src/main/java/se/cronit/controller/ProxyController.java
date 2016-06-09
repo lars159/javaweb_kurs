@@ -17,10 +17,10 @@ import se.cronit.sr.SR;
 public class ProxyController {
     
 	@RequestMapping(value="/traffic", method=RequestMethod.GET)
-    public void traffic(HttpServletRequest req ) {
+    public SR traffic(HttpServletRequest req ) {
 		//REMOVE
 		RestTemplate restTemplate = new RestTemplate();
         SR quote = restTemplate.getForObject("http://api.sr.se/api/v2/traffic/messages?format=json", SR.class);
-        System.out.println(quote.getMessages().get(0).getTitle());
+        return quote;
     }
 }

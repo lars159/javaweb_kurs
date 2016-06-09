@@ -24,8 +24,7 @@ public class CommentController {
         commentService.add(comment);
     }
 
-    @RequestMapping( method=RequestMethod.GET) 
-    @Secured("ROLE_USER")
+    @RequestMapping( method=RequestMethod.GET)  
     public List<String> get() {
         return commentService.get();
     }

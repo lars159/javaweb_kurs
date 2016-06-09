@@ -5,7 +5,7 @@ app.controller('CommentController', function($scope , $http) {
       
 	
     $scope.add = function(c) {
-		  $scope.comments.$save(c);
+		  $scope.comments.push(c);
     }
 
     $scope.getTraffic = function() {
